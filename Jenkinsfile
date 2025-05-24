@@ -1,24 +1,17 @@
 pipeline {
-agent any
-stages{
-stage("git cloning"){
-steps{
- git branch: 'main', url: 'https://github.com/shaikkhaleedaazhari/java-jenkins.git'
+    agent any
 
-}
-}
-stage("maven install"){
-when {
-  branch 'feature'
-}
-steps{
-
-script{
-sh 'mvn clean install'
-}
-}
-
-}
-}
+    stages {
+        stage("Maven Install") {
+            when {
+                branch 'feature'
+            }
+            steps {
+                script {
+                    sh 'mvn clean install'
+                }
+            }
+        }
+    }
 }
 
