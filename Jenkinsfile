@@ -9,7 +9,7 @@ steps{
 }
 stage("maven install"){
 when {
-  branch 'main'
+  branch 'feature'
 }
 steps{
 
