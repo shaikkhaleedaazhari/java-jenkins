@@ -14,7 +14,7 @@ when {
 steps{
 
 script{
-sh 'maven clean install'
+sh 'mvn clean install'
 }
 }
 
